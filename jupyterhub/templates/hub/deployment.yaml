@@ -72,6 +72,8 @@ spec:
       securityContext:
         runAsUser: {{ .Values.hub.uid }}
         fsGroup: {{ .Values.hub.fsGid }}
+      imagePullSecrets:
+      - name: {{ .Values.imagePullSecrets.name | quote }}
       containers:
       {{- if .Values.hub.extraContainers }}
 {{ toYaml .Values.hub.extraContainers | indent 6 }}

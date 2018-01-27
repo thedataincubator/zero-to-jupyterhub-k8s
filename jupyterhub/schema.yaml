@@ -35,6 +35,16 @@ properties:
 
           See [the kubernetes docs](https://kubernetes.io/docs/concepts/containers/images/#updating-images)
           for more info on what the values mean.
+      imagePullSecrets:
+        type: object
+        description: |
+          Set imagePullSecrets on the hub pod
+
+          properties:
+            name:
+              type: string
+              description: |
+                Name of imagePullSecret
       image:
         type: object
         description: |
